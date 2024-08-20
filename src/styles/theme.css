@@ -1,0 +1,17 @@
+:root {
+  /* Colors */
+  --primaryColor: #7205e6;
+  --accentColor: #9753df;
+  --secondaryColor: #b68ce3;
+  --textColor: #eae7ee;
+  --bgColor: #140b1d;
+
+  /* Colors */
+  --round: 10px;
+
+  /* Colors */
+  --whiteSpace: 1.5rem;
+}
+
+@media (prefers-color-scheme: light) {
+}
