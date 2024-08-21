@@ -9,8 +9,10 @@
   /* Colors */
   --round: 10px;
 
-  /* Colors */
+  /* Space */
   --whiteSpace: 1.5rem;
+  --itemGap1: 1rem;
+  --itemGap2: 1.5rem;
 }
 
 @media (prefers-color-scheme: light) {

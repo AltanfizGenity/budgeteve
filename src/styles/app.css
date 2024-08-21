@@ -14,10 +14,20 @@
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
   accent-color: var(--accentColor);
   margin: 0;
   background-color: var(--bgColor);
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
 }
