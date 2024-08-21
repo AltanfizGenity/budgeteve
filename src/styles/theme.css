@@ -13,6 +13,9 @@
   --whiteSpace: 1.5rem;
   --itemGap1: 1rem;
   --itemGap2: 1.5rem;
+
+  /* Navbar */
+  --navWidth: 96px;
 }
 
 @media (prefers-color-scheme: light) {

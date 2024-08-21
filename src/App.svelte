@@ -2,7 +2,13 @@
   import Navbar from "./lib/Navbar.svelte";
 </script>
 
+<Navbar />
 <main>
-  <Navbar />
   <h1>budgeteve</h1>
 </main>
+
+<style>
+  main {
+    margin-left: var(--navWidth);
+  }
+</style>
