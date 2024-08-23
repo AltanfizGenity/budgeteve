@@ -1,7 +1,6 @@
 <script>
   import { AddBtn, BalanceAccountsBtn, HomeBtn, RecordsBtn } from "./btns/icon-btns";
   import viteLogo from "/vite.svg";
-  let actions = ["add"];
 </script>
 
 <nav>
@@ -30,11 +29,23 @@
     place-items: center start;
     z-index: 1000;
     background-color: hsl(270, 45%, 5%);
-    gap: var(--itemGap2);
+    gap: var(--itemGap3);
     padding-block: var(--whiteSpace);
   }
   .logo {
     width: 30px;
     height: 30px;
+  }
+
+  .router-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--itemGap2);
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--itemGap2);
   }
 </style>

@@ -12,7 +12,8 @@
   /* Space */
   --whiteSpace: 1.5rem;
   --itemGap1: 1rem;
-  --itemGap2: 1.5rem;
+  --itemGap2: 2rem;
+  --itemGap3: 3rem;
 
   /* Navbar */
   --navWidth: 96px;
