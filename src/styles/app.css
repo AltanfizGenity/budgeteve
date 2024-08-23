@@ -34,4 +34,5 @@ ul {
 
 main {
   margin-left: var(--navWidth);
+  padding: var(--sectionPadding);
 }
