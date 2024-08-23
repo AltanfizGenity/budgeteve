@@ -14,6 +14,13 @@
   --itemGap1: 1rem;
   --itemGap2: 2rem;
   --itemGap3: 3rem;
+  --lineSpace: 1.5;
+
+  /* Layout */
+  --gutter: 3.5rem;
+  --sideMargin: 6rem;
+  --whiteSpaceBtnCTA: 2.5rem;
+  --whiteSpaceNavItems: 1.5rem;
 
   /* Navbar */
   --navWidth: 96px;
