@@ -1,8 +1,11 @@
 <script>
   import Navbar from "./lib/Navbar.svelte";
+  import { currentRoute } from "./store/appstate";
 </script>
 
 <Navbar />
 <main>
-  <h1>budgeteve</h1>
+  {#if $currentRoute === "home"}
+    <h1>home</h1>
+  {/if}
 </main>
