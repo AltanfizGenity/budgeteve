@@ -1,7 +1,6 @@
 <script>
+  import { AddBtn, BalanceAccountsBtn, HomeBtn, RecordsBtn } from "./btns/icon-btns";
   import viteLogo from "/vite.svg";
-
-  let routerControls = ["home", "records", "accounts"];
   let actions = ["add"];
 </script>
 
@@ -10,18 +9,12 @@
     <img src={viteLogo} alt="logo" />
   </div>
   <ul class="router-controls">
-    {#each routerControls as route}
-      <li>
-        <button>{route}</button>
-      </li>
-    {/each}
+    <li><HomeBtn /></li>
+    <li><RecordsBtn /></li>
+    <li><BalanceAccountsBtn /></li>
   </ul>
   <ul class="actions">
-    {#each actions as action}
-      <li>
-        <button>{action}</button>
-      </li>
-    {/each}
+    <li><AddBtn /></li>
   </ul>
 </nav>
 
@@ -30,7 +23,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 96px;
+    width: var(--navWidth);
     height: 100%;
     display: flex;
     flex-direction: column;
