@@ -29,23 +29,23 @@
     place-items: center start;
     z-index: 1000;
     background-color: hsl(270, 45%, 5%);
-    gap: var(--itemGap3);
-    padding-block: var(--whiteSpace);
+    gap: var(--gutter);
+    padding-block: var(--sectionPadding);
   }
   .logo {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
   }
 
   .router-controls {
     display: flex;
     flex-direction: column;
-    gap: var(--itemGap2);
+    gap: var(--whiteSpaceBtnCTA);
   }
 
   .actions {
     display: flex;
     flex-direction: column;
-    gap: var(--itemGap2);
+    gap: var(--whiteSpaceNavItems);
   }
 </style>

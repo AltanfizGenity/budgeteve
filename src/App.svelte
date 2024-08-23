@@ -6,9 +6,3 @@
 <main>
   <h1>budgeteve</h1>
 </main>
-
-<style>
-  main {
-    margin-left: var(--navWidth);
-  }
-</style>

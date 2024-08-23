@@ -31,3 +31,7 @@ img {
 ul {
   list-style: none;
 }
+
+main {
+  margin-left: var(--navWidth);
+}
