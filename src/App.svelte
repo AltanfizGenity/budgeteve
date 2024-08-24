@@ -10,7 +10,7 @@
   {#if $currentRoute === "home"}
     <h1>home</h1>
   {:else if $currentRoute === "records"}
-    <!-- <Records /> -->
+    <Records />
     <RecordForm />
   {/if}
 </main>
