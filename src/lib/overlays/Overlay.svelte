@@ -1,7 +1,8 @@
 <script>
+  export let centered = false;
 </script>
 
-<div class="overlay">
+<div class="overlay" class:centered>
   <slot />
 </div>
 
@@ -14,5 +15,11 @@
     height: 100dvh;
     background-color: rgba(20, 20, 20, 0.8);
     z-index: 1001;
+
+    &.centered {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 </style>

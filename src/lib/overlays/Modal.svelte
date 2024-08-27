@@ -2,7 +2,7 @@
   import Overlay from "./Overlay.svelte";
 </script>
 
-<Overlay>
+<Overlay centered>
   <div class="modal">
     <div class="header">
       <h4 class="title">Modal</h4>
