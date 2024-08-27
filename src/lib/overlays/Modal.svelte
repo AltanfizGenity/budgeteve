@@ -1,16 +1,20 @@
 <script>
   import Overlay from "./Overlay.svelte";
+
+  export let open = true;
 </script>
 
-<Overlay centered>
-  <div class="modal">
-    <div class="header">
-      <h4 class="title">Modal</h4>
-      <button class="close-btn">x</button>
+{#if open}
+  <Overlay centered>
+    <div class="modal">
+      <div class="header">
+        <h4 class="title">Modal</h4>
+        <button class="close-btn" on:click={() => (open = false)}>&Cross;</button>
+      </div>
+      <slot />
     </div>
-    <slot />
-  </div>
-</Overlay>
+  </Overlay>
+{/if}
 
 <style>
   .modal {
