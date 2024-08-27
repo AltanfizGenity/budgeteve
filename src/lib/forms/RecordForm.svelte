@@ -1,6 +1,7 @@
 <script>
   import { createRecordData } from "../../data/dataLab";
   import { currentRecords } from "../../store/appdata";
+  import Modal from "../overlays/Modal.svelte";
   import InputAccount from "./record/InputAccount.svelte";
   import InputAmount from "./record/InputAmount.svelte";
   import InputCategory from "./record/InputCategory.svelte";
@@ -23,12 +24,14 @@
   }
 </script>
 
-<form class="record-form" on:submit|preventDefault={addRecord}>
-  <InputType />
-  <InputCategory />
-  <InputAccount />
-  <InputAmount />
-  <InputDate />
-  <InputNote />
-  <button>add record</button>
-</form>
+<Modal>
+  <form class="record-form" on:submit|preventDefault={addRecord}>
+    <InputType />
+    <InputCategory />
+    <InputAccount />
+    <InputAmount />
+    <InputDate />
+    <InputNote />
+    <button>add record</button>
+  </form>
+</Modal>
