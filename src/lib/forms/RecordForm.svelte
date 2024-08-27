@@ -37,6 +37,20 @@
     <InputAmount />
     <InputDate />
     <InputNote />
-    <button>add record</button>
+    <button class="submit-btn">add record</button>
   </form>
 </Modal>
+
+<style>
+  .record-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--itemGap1);
+  }
+
+  .submit-btn {
+    padding: 0.5rem 1rem;
+    margin-top: var(--gutter);
+    background-color: var(--primaryColor);
+  }
+</style>
