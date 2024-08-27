@@ -1,6 +1,7 @@
 <script>
   import { createRecordData } from "../../data/dataLab";
   import { currentRecords } from "../../store/appdata";
+  import { isRecordFormOpen } from "../../store/appstate";
   import Modal from "../overlays/Modal.svelte";
   import InputAccount from "./record/InputAccount.svelte";
   import InputAmount from "./record/InputAmount.svelte";
@@ -24,7 +25,12 @@
   }
 </script>
 
-<Modal>
+<Modal
+  open={$isRecordFormOpen}
+  on:close={() => {
+    $isRecordFormOpen = false;
+  }}
+>
   <form class="record-form" on:submit|preventDefault={addRecord}>
     <InputType />
     <InputCategory />

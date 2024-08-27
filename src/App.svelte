@@ -2,7 +2,7 @@
   import RecordForm from "./lib/forms/RecordForm.svelte";
   import Navbar from "./lib/Navbar.svelte";
   import Records from "./routes/Records.svelte";
-  import { currentRoute } from "./store/appstate";
+  import { currentRoute, isRecordFormOpen } from "./store/appstate";
 </script>
 
 <Navbar />
@@ -13,4 +13,9 @@
     <Records />
     <RecordForm />
   {/if}
+  <button
+    on:click={() => {
+      $isRecordFormOpen = true;
+    }}>open record form</button
+  >
 </main>
