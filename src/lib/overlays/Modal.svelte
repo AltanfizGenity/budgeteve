@@ -2,20 +2,21 @@
   import { createEventDispatcher } from "svelte";
   import Overlay from "./Overlay.svelte";
 
+  export let open = false;
+  export let title = "modal";
+
   const dispatch = createEventDispatcher();
 
   function close() {
     dispatch("close");
   }
-
-  export let open = false;
 </script>
 
 {#if open}
   <Overlay centered>
     <div class="modal">
       <div class="header">
-        <h4 class="title">Modal</h4>
+        <h4 class="title">{title}</h4>
         <button class="close-btn" on:click={close}>&Cross;</button>
       </div>
       <slot />

@@ -23,14 +23,13 @@
     );
     currentRecords.update((val) => [...val, newRecord]);
   }
+
+  function closeForm() {
+    $isRecordFormOpen = false;
+  }
 </script>
 
-<Modal
-  open={$isRecordFormOpen}
-  on:close={() => {
-    $isRecordFormOpen = false;
-  }}
->
+<Modal open={$isRecordFormOpen} on:close={closeForm} title="new record">
   <form class="record-form" on:submit|preventDefault={addRecord}>
     <InputType />
     <InputCategory />
