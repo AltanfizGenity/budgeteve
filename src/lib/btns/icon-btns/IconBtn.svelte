@@ -1,9 +1,17 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+
   export let classname = "";
   export let size = 24;
+
+  const dispatch = createEventDispatcher();
+
+  function click() {
+    dispatch("click");
+  }
 </script>
 
-<button class={`icon-btn ${classname}`} style="--size: {size}px;">
+<button class={`icon-btn ${classname}`} style="--size: {size}px;" on:click={click}>
   <slot />
 </button>
 
@@ -16,7 +24,6 @@
 
     &:hover {
       color: var(--primaryColor);
-      box-shadow: 0 0 32px var(--primaryColor);
       cursor: pointer;
     }
   }
