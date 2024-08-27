@@ -1,7 +1,14 @@
 <script>
+  import { createEventDispatcher } from "svelte";
   import Overlay from "./Overlay.svelte";
 
-  export let open = true;
+  const dispatch = createEventDispatcher();
+
+  function close() {
+    dispatch("close");
+  }
+
+  export let open = false;
 </script>
 
 {#if open}
@@ -9,7 +16,7 @@
     <div class="modal">
       <div class="header">
         <h4 class="title">Modal</h4>
-        <button class="close-btn" on:click={() => (open = false)}>&Cross;</button>
+        <button class="close-btn" on:click={close}>&Cross;</button>
       </div>
       <slot />
     </div>
