@@ -1,4 +1,5 @@
 <script>
+  import Record from "../lib/data-displays/Record.svelte";
   import { currentRecords } from "../store/appdata";
 </script>
 
@@ -6,7 +7,7 @@
   <h1>Records</h1>
   <div class="record-history">
     {#each $currentRecords as record}
-      <div>id: {record.id}</div>
+      <Record {...record} />
     {/each}
   </div>
 </section>
