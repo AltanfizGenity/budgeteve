@@ -1,6 +1,7 @@
 <script>
+  import { parseDateBasicFormat } from "../../../utils/date";
   import InputGroup from "../InputGroup.svelte";
-  let date = Date.now();
+  let date = parseDateBasicFormat(Date.now());
 </script>
 
 <InputGroup name="date">

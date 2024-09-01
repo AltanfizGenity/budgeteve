@@ -1,8 +1,8 @@
 <script>
-  import { parseDate } from "../../utils/date";
+  import { parseDateDefault } from "../../utils/date";
   export let category, amount, date;
 
-  const parsedDate = parseDate(date);
+  const parsedDate = parseDateDefault(date);
 </script>
 
 <div class="record">

@@ -19,7 +19,7 @@
       formData.get("type"),
       formData.get("category"),
       formData.get("account"),
-      formData.get("date"),
+      formData.get("date") || Date.now(),
       formData.get("amount"),
       formData.get("note")
     );
