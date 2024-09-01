@@ -4,5 +4,5 @@
 </script>
 
 <InputGroup name="amount">
-  <input type="number" bind:value={amount} name="amount" placeholder="0" id="amount" />
+  <input type="number" bind:value={amount} name="amount" placeholder="0" id="amount" required min="1" />
 </InputGroup>
