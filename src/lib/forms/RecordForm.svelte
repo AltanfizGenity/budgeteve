@@ -9,6 +9,7 @@
   import InputDate from "./record-form/InputDate.svelte";
   import InputNote from "./record-form/InputNote.svelte";
   import InputType from "./record-form/InputType.svelte";
+  import SubmitBtn from "./SubmitBtn.svelte";
 
   function addRecord(event) {
     let formData = new FormData(event.target);
@@ -39,7 +40,7 @@
     <InputAmount />
     <InputDate />
     <InputNote />
-    <button class="submit-btn">add record</button>
+    <SubmitBtn title="add record" />
   </form>
 </Modal>
 
@@ -48,11 +49,5 @@
     display: flex;
     flex-direction: column;
     gap: var(--itemGap1);
-  }
-
-  .submit-btn {
-    padding: 0.5rem 1rem;
-    margin-top: var(--gutter);
-    background-color: var(--primaryColor);
   }
 </style>

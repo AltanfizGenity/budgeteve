@@ -36,3 +36,9 @@ main {
   margin-left: var(--navWidth);
   padding: var(--sectionPadding);
 }
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
