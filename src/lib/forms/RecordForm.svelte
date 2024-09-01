@@ -3,12 +3,12 @@
   import { currentRecords } from "../../store/appdata";
   import { isRecordFormOpen } from "../../store/appstate";
   import Modal from "../overlays/Modal.svelte";
-  import InputAccount from "./record/InputAccount.svelte";
-  import InputAmount from "./record/InputAmount.svelte";
-  import InputCategory from "./record/InputCategory.svelte";
-  import InputDate from "./record/InputDate.svelte";
-  import InputNote from "./record/InputNote.svelte";
-  import InputType from "./record/InputType.svelte";
+  import InputAccount from "./record-form/InputAccount.svelte";
+  import InputAmount from "./record-form/InputAmount.svelte";
+  import InputCategory from "./record-form/InputCategory.svelte";
+  import InputDate from "./record-form/InputDate.svelte";
+  import InputNote from "./record-form/InputNote.svelte";
+  import InputType from "./record-form/InputType.svelte";
 
   function addRecord(event) {
     let formData = new FormData(event.target);
