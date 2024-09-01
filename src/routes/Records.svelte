@@ -18,4 +18,11 @@
   .records-view {
     width: 70%;
   }
+
+  .record-history {
+    margin-top: var(--whiteSpace);
+    display: flex;
+    flex-direction: column;
+    gap: var(--itemGap1);
+  }
 </style>

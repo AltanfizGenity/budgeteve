@@ -1,11 +1,8 @@
 <script>
+  import { parseDate } from "../../utils/date";
   export let category, amount, date;
 
-  const parsedDate = new Date(date).toLocaleDateString("en-gb", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const parsedDate = parseDate(date);
 </script>
 
 <div class="record">
