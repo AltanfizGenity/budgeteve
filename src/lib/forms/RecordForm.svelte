@@ -13,6 +13,7 @@
   function addRecord(event) {
     let formData = new FormData(event.target);
 
+    // REFACTOR: need use dynamic approach instead repeat to get data
     let newRecord = createRecordData(
       formData.get("type"),
       formData.get("category"),
@@ -22,6 +23,7 @@
       formData.get("note")
     );
     currentRecords.update((val) => [...val, newRecord]);
+    closeForm();
   }
 
   function closeForm() {
