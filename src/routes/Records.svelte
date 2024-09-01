@@ -4,10 +4,18 @@
 </script>
 
 <section class="records">
-  <h1>Records</h1>
-  <div class="record-history">
-    {#each $currentRecords as record}
-      <Record {...record} />
-    {/each}
+  <div class="records-view">
+    <h1>Records</h1>
+    <div class="record-history">
+      {#each $currentRecords as record}
+        <Record {...record} />
+      {/each}
+    </div>
   </div>
 </section>
+
+<style>
+  .records-view {
+    width: 70%;
+  }
+</style>
