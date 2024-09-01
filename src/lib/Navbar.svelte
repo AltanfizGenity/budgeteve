@@ -1,4 +1,5 @@
 <script>
+  import { isRecordFormOpen } from "../store/appstate";
   import { AddBtn, BalanceAccountsBtn, HomeBtn, RecordsBtn } from "./btns/icon-btns";
   import viteLogo from "/vite.svg";
 </script>
@@ -13,7 +14,13 @@
     <li><BalanceAccountsBtn /></li>
   </ul>
   <ul class="actions">
-    <li><AddBtn /></li>
+    <li>
+      <AddBtn
+        on:click={() => {
+          $isRecordFormOpen = true;
+        }}
+      />
+    </li>
   </ul>
 </nav>
 
