@@ -67,3 +67,19 @@ export let recordDataProto = [
     note: "Monthly utility bills",
   },
 ];
+
+export let defaultAccountsProto = [
+  {
+    name: "cash",
+    amount: 0,
+  },
+
+  {
+    name: "bank",
+    amount: 0,
+  },
+  {
+    name: "savings",
+    amount: 0,
+  },
+];
