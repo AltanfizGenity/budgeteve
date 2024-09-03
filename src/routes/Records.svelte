@@ -4,22 +4,25 @@
 </script>
 
 <section class="records">
-  <div class="records-view">
+  <div class="records-history">
     <h1>Records</h1>
-    <div class="record-history">
+    <div class="record-list">
       {#each $currentRecords as record}
         <Record {...record} />
       {/each}
     </div>
   </div>
+  <div class="records-panels"></div>
 </section>
 
 <style>
-  .records-view {
-    width: 70%;
+  .records {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .record-history {
+  .record-list {
     margin-top: var(--whiteSpace);
     display: flex;
     flex-direction: column;
