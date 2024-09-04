@@ -2,6 +2,7 @@
   import { createRecordData } from "../../data/dataLab";
   import { currentRecords } from "../../store/appdata";
   import { isRecordFormOpen } from "../../store/appstate";
+  import { updateRecords } from "../../utils/data";
   import Modal from "../overlays/Modal.svelte";
   import InputAccount from "./record-form/InputAccount.svelte";
   import InputAmount from "./record-form/InputAmount.svelte";
@@ -23,7 +24,7 @@
       formData.get("amount"),
       formData.get("note")
     );
-    currentRecords.update((val) => [...val, newRecord]);
+    updateRecords(newRecord);
     closeForm();
   }
 
