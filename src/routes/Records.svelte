@@ -1,6 +1,6 @@
 <script>
   import Record from "../lib/data-displays/Record.svelte";
-  import { currentRecords } from "../store/appdata";
+  import { currentAccounts, currentRecords } from "../store/appdata";
 </script>
 
 <section class="records">
@@ -12,7 +12,16 @@
       {/each}
     </div>
   </div>
-  <div class="records-panels"></div>
+  <div class="records-panels">
+    <div class="accounts-tracker">
+      {#each $currentAccounts as account}
+        <div class={`account ${account.name}`}>
+          <div class="account-name">{account.name}</div>
+          <div class="amount">{account.amount}</div>
+        </div>
+      {/each}
+    </div>
+  </div>
 </section>
 
 <style>
