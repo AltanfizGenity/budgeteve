@@ -25,6 +25,9 @@
 
   /* Navbar */
   --navWidth: 96px;
+
+  /* Box */
+  --radius: 10px;
 }
 
 @media (prefers-color-scheme: light) {
