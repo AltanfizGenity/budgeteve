@@ -1,5 +1,6 @@
 <script>
   import Record from "../lib/data-displays/Record.svelte";
+  import RiQuestion from "../lib/icons/RI-Question.svelte";
   import { currentAccounts, currentRecords } from "../store/appdata";
 </script>
 
@@ -12,12 +13,18 @@
       {/each}
     </div>
   </div>
-  <div class="records-panels">
+  <div class="information-panel">
     <div class="accounts-tracker">
+      <h1>Account</h1>
       {#each $currentAccounts as account}
         <div class={`account ${account.name}`}>
-          <div class="account-name">{account.name}</div>
-          <div class="amount">{account.amount}</div>
+          <div class="icon">
+            <RiQuestion />
+          </div>
+          <div class="details">
+            <div class="account-name">{account.name}</div>
+            <div class="amount">{account.amount}</div>
+          </div>
         </div>
       {/each}
     </div>
@@ -26,9 +33,7 @@
 
 <style>
   .records {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    width: 70%;
   }
 
   .record-list {
@@ -36,5 +41,34 @@
     display: flex;
     flex-direction: column;
     gap: var(--itemGap1);
+  }
+
+  .information-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: var(--sectionPadding);
+    display: flex;
+    flex-direction: column;
+    background: hsl(270, 45%, 5%);
+    width: 20%;
+    height: 100dvh;
+  }
+
+  .accounts-tracker {
+    display: flex;
+    flex-direction: column;
+    gap: var(--itemGap1);
+  }
+
+  .account {
+    display: flex;
+    align-items: center;
+    gap: var(--itemGap1);
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
   }
 </style>
