@@ -1,17 +1,10 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  import { recordTypeValue } from "../../../store/appstate";
   import InputGroup from "../InputGroup.svelte";
-  let type = "income";
-
-  const dispatch = createEventDispatcher();
-
-  function changed(event) {
-    dispatch("changed", event.currentTarget.value);
-  }
 </script>
 
 <InputGroup name="type">
-  <select bind:value={type} name="type" id="type" on:change={changed}>
+  <select bind:value={$recordTypeValue} name="type" id="type">
     <option value="income">income</option>
     <option value="expense">expense</option>
   </select>

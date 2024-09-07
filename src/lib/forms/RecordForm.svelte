@@ -11,8 +11,6 @@
   import InputType from "./record-form/InputType.svelte";
   import SubmitBtn from "./SubmitBtn.svelte";
 
-  let type = "income";
-
   function addRecord(event) {
     let formData = new FormData(event.target);
 
@@ -32,16 +30,12 @@
   function closeForm() {
     $isRecordFormOpen = false;
   }
-
-  function changeType(event) {
-    type = event.detail;
-  }
 </script>
 
 <Modal open={$isRecordFormOpen} on:close={closeForm} title="new record">
   <form class="record-form" on:submit|preventDefault={addRecord}>
-    <InputType on:changed={changeType} />
-    <InputCategory {type} />
+    <InputType />
+    <InputCategory />
     <InputAccount />
     <InputAmount />
     <InputDate />
