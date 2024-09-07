@@ -119,7 +119,7 @@ export let defaultCategories = {
       icon: null,
     },
   ],
-  expenses: [
+  expense: [
     {
       categoryName: "gas",
       icon: null,

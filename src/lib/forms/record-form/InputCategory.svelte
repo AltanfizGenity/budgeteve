@@ -1,12 +1,13 @@
 <script>
   import { defaultCategories } from "../../../data/dataLab";
   import InputGroup from "../InputGroup.svelte";
-  let category = "salary";
+
+  export let type = "income";
 </script>
 
 <InputGroup name="category">
-  <select bind:value={category} name="category" id="category">
-    {#each defaultCategories["income"] as { categoryName }}
+  <select name="category" id="category">
+    {#each defaultCategories[type] as { categoryName }}
       <option value={categoryName}>{categoryName}</option>
     {/each}
   </select>
