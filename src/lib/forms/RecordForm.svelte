@@ -1,5 +1,5 @@
 <script>
-  import { createRecordData } from "../../data/dataLab";
+  import { nanoid } from "nanoid";
   import { isRecordFormOpen } from "../../store/appstate";
   import { updateRecordData } from "../../utils/data";
   import Modal from "../overlays/Modal.svelte";
@@ -13,17 +13,8 @@
 
   function addRecord(event) {
     let formData = new FormData(event.target);
-
-    // REFACTOR: need use dynamic approach instead repeat to get data
-    let newRecord = createRecordData(
-      formData.get("type"),
-      formData.get("category"),
-      formData.get("account"),
-      formData.get("date") || Date.now(),
-      formData.get("amount"),
-      formData.get("note")
-    );
-    updateRecordData(newRecord);
+    let data = { id: nanoid(), ...Object.fromEntries(formData.entries()) };
+    updateRecordData(data);
     closeForm();
   }
 
