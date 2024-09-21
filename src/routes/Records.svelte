@@ -1,15 +1,23 @@
 <script>
   import Record from "../lib/data-displays/Record.svelte";
   import RiQuestion from "../lib/icons/RI-Question.svelte";
-  import { currentAccounts, currentRecords } from "../store/appdata";
+  import { currentAccounts, recordsDateSorted } from "../store/appdata";
+  import { getDateOfFormattedDateID } from "../utils/date";
 </script>
 
 <section class="records">
   <div class="records-history">
     <h1>Records</h1>
-    <div class="record-list">
-      {#each $currentRecords as record}
-        <Record {...record} />
+    <div class="records-list">
+      {#each $recordsDateSorted as group}
+        <div class="record-group">
+          <div class="date">{getDateOfFormattedDateID(group[0])}</div>
+          <div class="record-list">
+            {#each group[1] as record}
+              <Record {...record} />
+            {/each}
+          </div>
+        </div>
       {/each}
     </div>
   </div>

@@ -2,7 +2,7 @@
   import RecordForm from "./lib/forms/RecordForm.svelte";
   import Navbar from "./lib/Navbar.svelte";
   import Records from "./routes/Records.svelte";
-  import { currentRoute, isRecordFormOpen } from "./store/appstate";
+  import { currentRoute } from "./store/appstate";
 </script>
 
 <Navbar />
