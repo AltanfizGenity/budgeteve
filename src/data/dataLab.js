@@ -1,25 +1,3 @@
-/**
- * Record data
- *
- * sequence of record data: ID, type, category, account, date, amount, note
- *
- * ID: unique identifier of the record -> 66a3f000-7bd7-4c9e-80de-de5e0aabc32c
- * Date: when record is created or occurs -> Friday, 22 August 2024
- * Type: categorize financial transactions -> has 2 val, income and expense
- * Category: spending or income category -> Salary, selling, etc for income. Gas, rent, etc for expense
- * Account: target account that effect this transaction -> E-money, Cash
- * Amount: value of transaction -> 50,000
- * Note: (optional) user note -> this is gift from my mother
- */
-
-/**
- * Input form data and return last modified data that ready to send to database
- * @returns Record data
- */
-export function createRecordData(type, category, account, date, amount, note) {
-  return { id: Date.now(), type, category, account, date, amount, note };
-}
-
 export let recordDataProto = [
   {
     id: "66a3f000-7bd7-4c9e-80de-de5e0aabc32c",
