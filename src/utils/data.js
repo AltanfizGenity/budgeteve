@@ -9,14 +9,13 @@ function updateRecordsHistory(newRecord) {
   currentRecords.update((current) => [...current, newRecord]);
 }
 
-function updateAccounts(newRecord) {
-  currentAccounts.update((current) => {
-    current.forEach((account) => {
-      if (account.name === newRecord.account) {
-        account.amount += Number(newRecord.amount);
-        return;
+function updateAccounts({ account: accountName, type, amount }) {
+  currentAccounts.update((accounts) => {
+    accounts.forEach((account) => {
+      if (accountName === account.name) {
+        account.amount += type === "income" ? Number(amount) : Number(amount) * -1.0;
       }
     });
-    return current;
+    return accounts;
   });
 }
