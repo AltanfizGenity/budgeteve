@@ -9,11 +9,11 @@
   <div class="records-history">
     <h1>Records</h1>
     <div class="records-list">
-      {#each $recordsDateSorted as group}
+      {#each $recordsDateSorted as [date, recordList]}
         <div class="record-group">
-          <div class="date">{getDateOfFormattedDateID(group[0])}</div>
+          <div class="date">{getDateOfFormattedDateID(date)}</div>
           <div class="record-list">
-            {#each group[1] as record}
+            {#each recordList.reverse() as record}
               <Record {...record} />
             {/each}
           </div>
