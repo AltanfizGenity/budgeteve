@@ -10,10 +10,12 @@
   import InputNote from "./record-form/InputNote.svelte";
   import InputType from "./record-form/InputType.svelte";
   import SubmitBtn from "./SubmitBtn.svelte";
+  import InputTitle from "./record-form/InputTitle.svelte";
 
   function addRecord(event) {
     let formData = new FormData(event.target);
     let data = { id: nanoid(), ...Object.fromEntries(formData.entries()) };
+    console.log(data);
     updateRecordData(data);
     closeForm();
   }
@@ -25,6 +27,7 @@
 
 <Modal open={$isRecordFormOpen} on:close={closeForm} title="new record">
   <form class="record-form" on:submit|preventDefault={addRecord}>
+    <InputTitle />
     <InputType />
     <InputCategory />
     <InputAccount />
