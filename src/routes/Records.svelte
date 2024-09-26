@@ -44,11 +44,33 @@
     width: 70%;
   }
 
-  .record-list {
+  .records-history {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .records-list {
     margin-top: var(--whiteSpace);
     display: flex;
     flex-direction: column;
-    gap: var(--itemGap1);
+    gap: 2rem;
+  }
+
+  .record-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & .date {
+      color: #aaa;
+    }
+  }
+
+  .record-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .information-panel {
