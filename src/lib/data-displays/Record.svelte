@@ -1,6 +1,6 @@
 <script>
   import RiSalary from "../icons/RI-Salary.svelte";
-  export let category, amount;
+  export let category, amount, title;
 </script>
 
 <div class="record">
@@ -10,8 +10,13 @@
         <RiSalary />
       </div>
     </div>
-    <div class="category">
-      {category}
+    <div class="info">
+      {#if title}
+        <div class="title">{title}</div>
+      {/if}
+      <div class="category" style:color={title ? "#707070" : null}>
+        {category}
+      </div>
     </div>
   </div>
   <div class="amount">{amount}</div>

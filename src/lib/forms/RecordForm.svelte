@@ -15,7 +15,6 @@
   function addRecord(event) {
     let formData = new FormData(event.target);
     let data = { id: nanoid(), ...Object.fromEntries(formData.entries()) };
-    console.log(data);
     updateRecordData(data);
     closeForm();
   }
