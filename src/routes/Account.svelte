@@ -1,5 +1,10 @@
 <script>
   import { currentAccounts } from "../store/appdata";
+  import { isAccountFormOpen } from "../store/appstate";
+
+  function openForm() {
+    $isAccountFormOpen = true;
+  }
 </script>
 
 <section class="account-page">
@@ -14,7 +19,7 @@
       </li>
     {/each}
   </ul>
-  <button class="btn primary new-account-btn">new account</button>
+  <button class="btn primary new-account-btn" on:click={openForm}>new account</button>
 </section>
 
 <style>
