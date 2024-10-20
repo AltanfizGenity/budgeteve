@@ -8,10 +8,17 @@
   function closeForm() {
     $isAccountFormOpen = false;
   }
+
+  function createAccount(event) {
+    let formData = new FormData(event.target);
+    let data = { ...Object.fromEntries(formData.entries()) };
+
+    console.log(data);
+  }
 </script>
 
 <Modal on:close={closeForm} open={$isAccountFormOpen} title="create account">
-  <form>
+  <form on:submit|preventDefault={createAccount}>
     <InputTitle />
     <InputAmount />
     <SubmitBtn on:click />
