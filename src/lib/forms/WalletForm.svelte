@@ -3,31 +3,31 @@
   import Modal from "../overlays/Modal.svelte";
   import InputAmount from "./transaction-form/InputAmount.svelte";
   import InputTitle from "./transaction-form/InputTitle.svelte";
-  import { isAccountFormOpen } from "../../store/appstate";
+  import { isWalletFormOpen } from "../../store/appstate";
   import SubmitBtn from "./SubmitBtn.svelte";
-  import { currentAccounts } from "../../store/appdata";
+  import { wallets } from "../../store/appdata";
 
   function closeForm() {
-    $isAccountFormOpen = false;
+    $isWalletFormOpen = false;
   }
 
-  function createAccount(event) {
+  function createWallet(event) {
     let formData = new FormData(event.target);
     let { title, amount } = Object.fromEntries(formData.entries());
-    let newAccount = {};
+    let newWallet = {};
 
-    newAccount.name = title;
-    newAccount.amount = amount ? Number(amount) : 0;
+    newWallet.name = title;
+    newWallet.amount = amount ? Number(amount) : 0;
 
-    $currentAccounts = [...$currentAccounts, newAccount];
+    $wallets = [...$wallets, newWallet];
     closeForm();
   }
 </script>
 
-<Modal on:close={closeForm} open={$isAccountFormOpen} title="create account">
-  <form on:submit|preventDefault={createAccount}>
+<Modal on:close={closeForm} open={$isWalletFormOpen} title="create wallet">
+  <form on:submit|preventDefault={createWallet}>
     <InputTitle />
     <InputAmount required={false} />
-    <SubmitBtn on:click />
+    <SubmitBtn on:click title="add wallet" />
   </form>
 </Modal>

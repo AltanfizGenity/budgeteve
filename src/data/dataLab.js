@@ -1,4 +1,4 @@
-export let defaultAccountsProto = [
+export let walletTemplateData = [
   {
     name: "cash",
     amount: 0,

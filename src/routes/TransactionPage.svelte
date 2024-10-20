@@ -1,7 +1,7 @@
 <script>
   import Transaction from "../lib/data-displays/Transaction.svelte";
   import RiQuestion from "../lib/icons/RI-Question.svelte";
-  import { currentAccounts, transactionSortedDate } from "../store/appdata";
+  import { wallets, transactionSortedDate } from "../store/appdata";
   import { getDateOfFormattedDateID } from "../utils/date";
 </script>
 
@@ -22,16 +22,16 @@
     </div>
   </div>
   <div class="information-panel">
-    <div class="accounts-tracker">
-      <h1>Account</h1>
-      {#each $currentAccounts as account}
-        <div class={`account ${account.name}`}>
+    <div class="wallet-tracker">
+      <h1>current wallet</h1>
+      {#each $wallets as { name, amount }}
+        <div class={`wallet ${name}`}>
           <div class="icon">
             <RiQuestion />
           </div>
           <div class="details">
-            <div class="account-name">{account.name}</div>
-            <div class="amount">{account.amount}</div>
+            <div class="wallet-name">{name}</div>
+            <div class="wallet-amount">{amount}</div>
           </div>
         </div>
       {/each}
@@ -85,13 +85,13 @@
     height: 100dvh;
   }
 
-  .accounts-tracker {
+  .wallet-tracker {
     display: flex;
     flex-direction: column;
     gap: var(--itemGap1);
   }
 
-  .account {
+  .wallet {
     display: flex;
     align-items: center;
     gap: var(--itemGap1);

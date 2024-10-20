@@ -1,9 +1,9 @@
 import { derived, writable } from "svelte/store";
-import { defaultAccountsProto } from "../data/dataLab";
+import { walletTemplateData } from "../data/dataLab";
 import { formatDateID } from "../utils/date";
 
 export let transactions = writable([]);
-export let currentAccounts = writable([]);
+export let wallets = writable([]);
 
 export let transactionSortedDate = derived(transactions, ($transactions) => {
   let sortedTransaction = new Map();
@@ -29,4 +29,4 @@ export let transactionSortedDate = derived(transactions, ($transactions) => {
 });
 
 // LAB: Mock data from data lab
-currentAccounts.set(defaultAccountsProto);
+wallets.set(walletTemplateData);

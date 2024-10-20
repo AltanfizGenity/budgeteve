@@ -3,7 +3,7 @@
   import { isTransactionFormOpen } from "../../store/appstate";
   import { updateTransactions } from "../../utils/data";
   import Modal from "../overlays/Modal.svelte";
-  import InputAccount from "./transaction-form/InputAccount.svelte";
+  import InputWallet from "./transaction-form/InputWallet.svelte";
   import InputAmount from "./transaction-form/InputAmount.svelte";
   import InputCategory from "./transaction-form/InputCategory.svelte";
   import InputDate from "./transaction-form/InputDate.svelte";
@@ -29,7 +29,7 @@
     <InputTitle />
     <InputType />
     <InputCategory />
-    <InputAccount />
+    <InputWallet />
     <InputAmount />
     <InputDate />
     <InputNote />
