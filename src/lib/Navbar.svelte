@@ -1,6 +1,6 @@
 <script>
-  import { isRecordFormOpen } from "../store/appstate";
-  import { AddBtn, BalanceAccountsBtn, HomeBtn, RecordsBtn } from "./btns/icon-btns";
+  import { isTransactionFormOpen } from "../store/appstate";
+  import { AddBtn, BalanceAccountsBtn, HomeBtn, TransactionPageBtn } from "./btns/icon-btns";
   import viteLogo from "/vite.svg";
 </script>
 
@@ -10,14 +10,14 @@
   </div>
   <ul class="router-controls">
     <li><HomeBtn /></li>
-    <li><RecordsBtn /></li>
+    <li><TransactionPageBtn /></li>
     <li><BalanceAccountsBtn /></li>
   </ul>
   <ul class="actions">
     <li>
       <AddBtn
         on:click={() => {
-          $isRecordFormOpen = true;
+          $isTransactionFormOpen = true;
         }}
       />
     </li>

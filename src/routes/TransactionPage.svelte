@@ -1,20 +1,20 @@
 <script>
-  import Record from "../lib/data-displays/Record.svelte";
+  import Transaction from "../lib/data-displays/Transaction.svelte";
   import RiQuestion from "../lib/icons/RI-Question.svelte";
-  import { currentAccounts, recordsDateSorted } from "../store/appdata";
+  import { currentAccounts, transactionSortedDate } from "../store/appdata";
   import { getDateOfFormattedDateID } from "../utils/date";
 </script>
 
-<section class="records">
-  <div class="records-history">
-    <h1>Records</h1>
-    <div class="records-list">
-      {#each $recordsDateSorted as [date, recordList]}
-        <div class="record-group">
+<section class="transaction">
+  <div class="transaction-history">
+    <h1>Transaction history</h1>
+    <div class="transactions-list">
+      {#each $transactionSortedDate as [date, transactionList]}
+        <div class="transaction-group">
           <div class="date">{getDateOfFormattedDateID(date)}</div>
-          <div class="record-list">
-            {#each recordList.reverse() as record}
-              <Record {...record} />
+          <div class="transaction-list">
+            {#each transactionList.reverse() as transaction}
+              <Transaction {...transaction} />
             {/each}
           </div>
         </div>
@@ -40,24 +40,24 @@
 </section>
 
 <style>
-  .records {
+  .transaction {
     width: 70%;
   }
 
-  .records-history {
+  .transaction-history {
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
 
-  .records-list {
+  .transactions-list {
     margin-top: var(--whiteSpace);
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
 
-  .record-group {
+  .transaction-group {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -67,7 +67,7 @@
     }
   }
 
-  .record-list {
+  .transaction-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;

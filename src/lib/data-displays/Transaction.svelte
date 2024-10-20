@@ -3,7 +3,7 @@
   export let category, amount, title;
 </script>
 
-<div class="record">
+<div class="transaction">
   <div class="details">
     <div class="badge">
       <div class="icon">
@@ -23,7 +23,7 @@
 </div>
 
 <style>
-  .record {
+  .transaction {
     display: flex;
     width: 100%;
     padding: 1.5rem;

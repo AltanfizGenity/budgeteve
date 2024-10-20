@@ -2,30 +2,30 @@ import { derived, writable } from "svelte/store";
 import { defaultAccountsProto } from "../data/dataLab";
 import { formatDateID } from "../utils/date";
 
-export let currentRecords = writable([]);
+export let transactions = writable([]);
 export let currentAccounts = writable([]);
 
-export let recordsDateSorted = derived(currentRecords, ($currentRecords) => {
-  let sortedRecord = new Map();
+export let transactionSortedDate = derived(transactions, ($transactions) => {
+  let sortedTransaction = new Map();
 
-  let unsorted = $currentRecords.reduce((total, record) => {
-    let date = record.date;
+  let unsorted = $transactions.reduce((total, transaction) => {
+    let date = transaction.date;
     let groupID = formatDateID(date);
 
     if (!total[groupID]) {
       total[groupID] = [];
     }
 
-    total[groupID].push(record);
+    total[groupID].push(transaction);
     return total;
   }, {});
 
   let sortedKeys = Object.keys(unsorted).sort((a, b) => Number(b) - Number(a));
   sortedKeys.forEach((key) => {
-    sortedRecord.set(key, unsorted[key]);
+    sortedTransaction.set(key, unsorted[key]);
   });
 
-  return sortedRecord;
+  return sortedTransaction;
 });
 
 // LAB: Mock data from data lab

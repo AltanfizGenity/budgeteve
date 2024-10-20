@@ -1,8 +1,8 @@
 <script>
   // @ts-nocheck
   import Modal from "../overlays/Modal.svelte";
-  import InputAmount from "./record-form/InputAmount.svelte";
-  import InputTitle from "./record-form/InputTitle.svelte";
+  import InputAmount from "./transaction-form/InputAmount.svelte";
+  import InputTitle from "./transaction-form/InputTitle.svelte";
   import { isAccountFormOpen } from "../../store/appstate";
   import SubmitBtn from "./SubmitBtn.svelte";
   import { currentAccounts } from "../../store/appdata";

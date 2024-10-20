@@ -1,12 +1,12 @@
-import { currentAccounts, currentRecords } from "../store/appdata";
+import { currentAccounts, transactions } from "../store/appdata";
 
-export function updateRecordData(newRecord) {
-  updateRecordsHistory(newRecord);
-  updateAccounts(newRecord);
+export function updateTransactions(transaction) {
+  updateTransactionHistory(transaction);
+  updateAccounts(transaction);
 }
 
-function updateRecordsHistory(newRecord) {
-  currentRecords.update((current) => [...current, newRecord]);
+function updateTransactionHistory(transaction) {
+  transactions.update((current) => [...current, transaction]);
 }
 
 function updateAccounts({ account: accountName, type, amount }) {
