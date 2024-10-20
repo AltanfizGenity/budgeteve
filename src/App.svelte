@@ -1,6 +1,7 @@
 <script>
   import RecordForm from "./lib/forms/RecordForm.svelte";
   import Navbar from "./lib/Navbar.svelte";
+  import Account from "./routes/Account.svelte";
   import Records from "./routes/Records.svelte";
   import { currentRoute } from "./store/appstate";
 </script>
@@ -14,5 +15,7 @@
     <Records />
     <!-- TODO: Move RecordForm to seperate element block or custom UI wrapper -->
     <RecordForm />
+  {:else if $currentRoute === "account"}
+    <Account />
   {/if}
 </main>
